@@ -42,7 +42,7 @@ namespace ConsoleExercises
                     write.WriteLine(email);
                     write.WriteLine(id);
 
-
+                   
 
                     write.Close();
 
@@ -78,7 +78,23 @@ namespace ConsoleExercises
 
         public void DeSerialize(string path)
         {
+            try
+            {
+                using (StreamReader reader = new StreamReader(path))
+                {
 
+                    string str;
+                    while ((str = reader.ReadLine()) != null)
+                    {
+                        Console.WriteLine(str);
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 

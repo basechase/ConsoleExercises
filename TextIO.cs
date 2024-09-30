@@ -14,7 +14,7 @@ namespace ConsoleExercises
             string path = @"test.txt";
 
             // write file
-
+            /*
 
             if (!File.Exists(path))
             {
@@ -68,6 +68,7 @@ namespace ConsoleExercises
             {
                 Console.WriteLine(e);
             }
+            */
         }
     }
 }
