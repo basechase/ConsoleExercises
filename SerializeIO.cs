@@ -32,12 +32,48 @@ namespace ConsoleExercises
         public void Serialize(string path)
         {
             
-                StreamWriter write = new StreamWriter(path, false); 
-                write.Close();
-                
-               
-                
             
+            if (!File.Exists(path))
+            {
+                try
+                {
+                    StreamWriter write = new StreamWriter(path, false);
+                    write.WriteLine(name);
+                    write.WriteLine(email);
+                    write.WriteLine(id);
+
+
+
+                    write.Close();
+
+
+
+                    //Dispose of the object
+                    try
+                    {
+                        write.Dispose();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+
+
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
+
+
+            }
+
+
+
+
+
         }
 
         public void DeSerialize(string path)
@@ -63,9 +99,9 @@ namespace ConsoleExercises
             
            
 
-            bob.Serialize(@"contacts\bob.txt");
-            fred.Serialize(@"contacts\bob.txt");
-            jane.Serialize(@"contacts\bob.txt");
+            bob.Serialize(@"bob.txt");
+            fred.Serialize(@"fred.txt");
+            jane.Serialize(@"jane.txt");
 
 
             // Clear out contacts
@@ -74,9 +110,9 @@ namespace ConsoleExercises
             jane  = new Contact();
 
            // Load contents from file
-            bob.DeSerialize(@"contacts\bob.txt");
-            fred.DeSerialize(@"contacts\bob.txt");
-            jane.DeSerialize(@"contacts\bob.txt");
+            bob.DeSerialize(@"bob.txt");
+            fred.DeSerialize(@"fred.txt");
+            jane.DeSerialize(@"jane.txt");
 
 
             //print contacts
