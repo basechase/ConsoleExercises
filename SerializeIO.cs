@@ -83,11 +83,9 @@ namespace ConsoleExercises
                 using (StreamReader reader = new StreamReader(path))
                 {
 
-                    string str;
-                    while ((str = reader.ReadLine()) != null)
-                    {
-                        Console.WriteLine(str);
-                    }
+                    name = reader.ReadLine();
+                    email = reader.ReadLine();
+                    id = int.Parse(reader.ReadLine());
 
                 }
             }
