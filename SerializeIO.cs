@@ -82,7 +82,7 @@ namespace ConsoleExercises
             {
                 using (StreamReader reader = new StreamReader(path))
                 {
-
+                    //reasign data to empty object
                     name = reader.ReadLine();
                     email = reader.ReadLine();
                     id = int.Parse(reader.ReadLine());
